@@ -1,0 +1,641 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #02080d;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+:root {
+    --primary-cyan: #00ffcc;
+    --primary-teal: #008f7a;
+    --accent-neon: #14f195;
+
+    --bg-deep-black: #050b0b;
+    --bg-dark-gray: #0d1616;
+    --bg-border: #1e2e2e;
+
+    --text-white: #ffffff;
+    --text-silver: #b0b8b8;
+    --text-muted: #627070;
+
+    --surface-overlay: rgba(255, 255, 255, 0.05);
+    --glow-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    background-image: url("Assets/DHbackground.png");
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 30px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+header nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-white);
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s;
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ffcc;
+    box-shadow: 0px 0px 8px #00ffcc;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+.contactUs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-teal);
+}
+
+.contactUs p {
+    color: var(--text-white);
+}
+
+.contactUs i {
+    color: var(--primary-teal);
+}
+
+.heroMain {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.heroCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.heroCopy p {
+    font-size: 20px;
+    color: #0fbf9f;
+}
+
+.heroCopy h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 80px;
+    color: white;
+    line-height: 70px;
+}
+
+.heroCopy h1 span {
+    color: #0fbf9f;
+}
+
+.heroCopy h2,
+.heroCopy h4 {
+    color: #627070;
+}
+
+.heroCopy h2 {
+    font-weight: 400;
+}
+
+.heroCopy h4 {
+    font-weight: 600;
+}
+
+.heroActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.discussionButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #0aa38c;
+    background: linear-gradient(to right, black, #0aa38c);
+}
+
+.discussionButton p {
+    color: white;
+}
+
+.showReelButton {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.showReelButton i {
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid #0aa38c;
+}
+
+.showReelButton p {
+    font-size: 13px;
+    color: #c0c0c0;
+    font-weight: 500;
+}
+
+.heroFeatures {
+    display: flex;
+    flex-direction: column;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 30px;
+}
+
+.featureItem i {
+    font-size: 40px;
+    padding: 6px 8px;
+    border-radius: 40%;
+    border: 1px solid #0fbf9f;
+    color: #0fbf9f;
+}
+
+.featureItem p {
+    color: #c0c0c0;
+    font-size: 15px;
+}
+
+.stats {
+    width: 90%;
+    height: 20%;
+
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(12 38 20 / 14%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid #3d39394a;
+}
+
+.stats div {
+    text-align: center;
+    color: white;
+    padding: 0px 20px;
+    border-left: 1px solid #72727273;
+}
+
+.stats .statsFirst {
+    border-left: none;
+}
+
+.stats div h1 {
+    color: #0fbf9f;
+}
+
+.stats div p {
+    color: #c0c0c0;
+}
+
+#metal1 {
+    height: 200px;
+    position: absolute;
+    right: -15px;
+    bottom: 20px;
+}
+
+#metal2 {
+    height: 200px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.fill {
+    width: 100%;
+    height: 13%;
+
+    background-color: #02080d;
+}
+
+.sectionHeading {
+    width: 100%;
+    height: 20%;
+
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02080d;
+}
+
+.sectionTitle {
+    text-align: center;
+    line-height: 25px;
+}
+
+.sectionHeading p {
+    color: #0fbf9f;
+    font-size: 15px;
+}
+
+.sectionHeading p span {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.sectionArrows {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sectionArrows i {
+    font-size: 16px;
+    padding: 13px;
+    color: #0fbf9f;
+    border-radius: 50%;
+    border: 1px solid #0fbf9f;
+}
+
+.sectionArrows .ri-arrow-left-line {
+    color: #525050;
+    border: 1px solid #525050;
+}
+
+.projectGrid {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.project-card {
+    width: 100%;
+    max-width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #008f7a;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cardImage {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cardImage .cardTag {
+    padding: 5px 10px;
+    background-color: #02080db6;
+    border: 1px solid #0fbf9f;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.cardImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cardDescription {
+    color: white;
+}
+
+.project-card .cardBody {
+    padding: 20px;
+    background-color: #02080d;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cardBody .cardActions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardActions i:hover {
+    color: #008f7a;
+    cursor: pointer;
+}
+
+.storeIcons {
+    display: flex;
+    font-size: 16px;
+    gap: 10px;
+    color: white;
+}
+
+.cardActions .ri-arrow-right-line {
+    font-size: 16px;
+    padding: 13px;
+    color: #0fbf9f;
+    border-radius: 50%;
+    border: 1px solid #0fbf9f;
+}
+
+.workTitle {
+    width: 100%;
+    height: 10%;
+
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.workTitle span {
+    color: #0fbf9f;
+}
+
+.processStack {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3%;
+    position: relative;
+}
+
+.processLine {
+    width: 80%;
+    height: 20px;
+
+    border-top: 2px dashed #008f7a;
+    position: absolute;
+    top: 50%;
+    z-index: -1;
+}
+
+.processCard {
+    height: 150px;
+    background-color: #02080d;
+    border-radius: 10px;
+
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    max-width: 192px;
+    border-radius: 12px;
+    border: 1px solid #1c1c1c;
+}
+
+.processCard i {
+    font-size: 30px;
+    color: #008f7a;
+    padding: 3% 4%;
+
+    align-self: flex-start;
+
+    border-radius: 50%;
+    border: 1px solid #008f7a;
+    margin-top: 10%;
+}
+
+.processCopy {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.processCopy h1 {
+    font-size: 30px;
+    color: #008f7a;
+}
+
+.processCopy h3 {
+    font-size: 13px;
+    color: white;
+}
+
+.processCopy p {
+    font-size: 12px;
+    color: #9e9e9e;
+}
+
+footer {
+    height: 60%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerPanel {
+    width: 85%;
+    height: 50%;
+    border: 1px solid #008f7a49;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background-image: url("Assets/footerDH.png");
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.footerMeta {
+    width: 85%;
+    height: 10%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #9e9e9e;
+    font-size: 12px;
+}
+
+.footerLinks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+}
+
+.footer-left h1 {
+    color: white;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.footer-left h1 span {
+    color: #008f7a;
+}
+
+.footer-left p {
+    color: #9e9e9e;
+}
+
+.footerBtn {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #0aa38c;
+    background: linear-gradient(to right, #0aa38c, black);
+}
+
+.footerBtn p {
+    color: #ffff;
+}
+
+.footer-right {
+    width: 45%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+
+    color: #c0c0c0;
+    border-right: 1px solid #75717131;
+    gap: 10px;
+}
+
+.footerBrand .social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footerBrand .social i {
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid #c0c0c0;
+}
+
+.footerBrand .social i:hover {
+    cursor: pointer;
+    color: #008f7a;
+    border-color: #008f7a;
+}
+
+.footerContacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #c0c0c0;
+}
+
+.footerContacts div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.footerContacts div:hover {
+    color: #008f7a;
+    cursor: pointer;
+}
